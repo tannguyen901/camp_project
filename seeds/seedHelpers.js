@@ -1,0 +1,40 @@
+module.exports.descriptors = [
+    "aback", 
+    "abaft", 
+    "abandoned", 
+    "abashed", 
+    "aberrant", 
+    "abhorrent", 
+    "abiding", 
+    "abject", 
+    "ablaze", 
+    "able", 
+    "abnormal", 
+    "aboard", 
+    "aboriginal", 
+    "abortive", 
+    "abounding", 
+    "abrasive",
+    "abrupt", 
+    "absent"
+]
+
+module.exports.places = [
+    "Abbott", 
+    "Abernathy", 
+    "creek-side",
+    "horse-camp", 
+    "Ackerly", 
+    "Backcountry", 
+    "River",
+    "Spring", 
+    "Agua Dulce", 
+    "Bayshore",
+    "Alamo Heights", 
+    "Alba", "Albany",
+    "Alice", 
+    "Alice Acres", 
+    "Allen", 
+    "Alma", 
+    "Alpine"
+]
