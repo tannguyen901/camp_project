@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Campground = require('../models/campground')
 const cities = require('./cities')
-const {places, descriptors} = require("./seedHelpers")
+const { places, descriptors } = require("./seedHelpers")
 
 
 mongoose.connect('mongodb://localhost:27017/camp-db', {
-    useNewUrlParser: true, 
+    useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
@@ -18,11 +18,15 @@ db.once("open", () => {
 const sample = (array) => array[Math.floor(Math.random() * array.length)]
 const seedDB = async () => {
     await Campground.deleteMany({})
-    for(let i = 0; i < 50; i++) {
+    for (let i = 0; i < 50; i++) {
         const random1000 = Math.floor(Math.random() * 1000) + 1;
+        const price = Math.floor(Math.random() * 20) + 1
         const camp = new Campground({
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
-            title: `${sample(descriptors)} ${sample(places)}`
+            title: `${sample(descriptors)} ${sample(places)}`,
+            image: 'https://source.unsplash.com/collection/483251',
+            description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum pariatur architecto quis excepturi harum alias nobis consectetur, consequuntur beatae, esse itaque possimus quos voluptatem ex voluptates delectus nesciunt nulla blanditiis?",
+            price
         })
         await camp.save();
     }
